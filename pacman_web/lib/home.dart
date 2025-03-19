@@ -1,6 +1,8 @@
+import 'package:Adglobe/about.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:go_router/go_router.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -17,9 +19,10 @@ class HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: double.infinity,
       height: 3000,
+      color: Colors.white,
       child: Column(children: [
         Container(
             width: double.infinity,
@@ -45,7 +48,10 @@ class HomeState extends State<Home> {
               Expanded(
                 child: Wrap(
                   children: [
-                    button("ABOUT", () {}),
+                    button("ABOUT", () {
+                      // context.go('/about');
+                      Navigator.of(context).push(_createRoute(const About()));
+                    }),
                     button("BUSINESS", () {}),
                     button("PRODUCT", () {}),
                     button("WORKS", () {}),
@@ -54,8 +60,18 @@ class HomeState extends State<Home> {
                   ],
                 ),
               ),
-            ]))
+            ])),
+        const Text("Home")
       ]),
+    );
+  }
+
+  Route _createRoute(page) {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => page,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        return child;
+      },
     );
   }
 
