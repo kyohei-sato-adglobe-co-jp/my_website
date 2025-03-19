@@ -1,8 +1,11 @@
 import 'dart:math';
+import 'package:Adglobe/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const Game2048());
+  runApp(const MaterialApp(
+    home: Home(),
+  ));
 }
 
 class Game2048 extends StatefulWidget {
