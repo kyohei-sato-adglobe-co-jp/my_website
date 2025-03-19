@@ -69,6 +69,7 @@ class HomeState extends State<Home> {
           width: double.infinity,
           child: Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("CONTACT", style: GoogleFonts.notoSans(fontWeight: FontWeight.bold, fontSize: 60, color: Colors.white)),
                 Text("お問い合わせ", style: GoogleFonts.notoSans(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white)),
