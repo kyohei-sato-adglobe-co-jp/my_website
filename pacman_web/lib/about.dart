@@ -59,7 +59,7 @@ class HomeState extends State<About> {
                 ),
               ),
             ])),
-        const Text("About 作ってないよ")
+        Text("私たちの強み", style: GoogleFonts.notoSans(fontWeight: FontWeight.bold, fontSize: 24, color: Colors.black)),
       ]),
     );
   }

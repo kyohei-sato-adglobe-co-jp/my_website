@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:Adglobe/about.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -49,7 +52,6 @@ class HomeState extends State<Home> {
                 child: Wrap(
                   children: [
                     button("ABOUT", () {
-                      // context.go('/about');
                       Navigator.of(context).push(_createRoute(const About()));
                     }),
                     button("BUSINESS", () {}),
@@ -61,9 +63,48 @@ class HomeState extends State<Home> {
                 ),
               ),
             ])),
-        const Text("Home")
+        Container(
+          color: Colors.black,
+          height: 250,
+          width: double.infinity,
+          child: Center(
+            child: Column(
+              children: [
+                Text("CONTACT", style: GoogleFonts.notoSans(fontWeight: FontWeight.bold, fontSize: 60, color: Colors.white)),
+                Text("お問い合わせ", style: GoogleFonts.notoSans(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white)),
+              ],
+            ),
+          ),
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            textField("名前", TextEditingController()),
+            textField("御社名", TextEditingController()),
+            textField("部署名", TextEditingController()),
+          ],
+        )
       ]),
     );
+  }
+
+  Row textField(String label, TextEditingController controller) {
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Text(label),
+      const SizedBox(
+        width: 20,
+      ),
+      SizedBox(
+        width: 500,
+        height: 50,
+        child: TextField(
+          controller: controller,
+        ),
+      ),
+      const SizedBox(
+        height: 10,
+      )
+    ]);
   }
 
   Route _createRoute(page) {

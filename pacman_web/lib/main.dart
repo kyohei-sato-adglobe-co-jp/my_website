@@ -6,24 +6,25 @@ import 'package:go_router/go_router.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: MyApp(),
-  ));
+      home: Scaffold(
+    body: Home(),
+  )));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      // title: '2048 Game',
-      // theme: ThemeData(
-      //   primarySwatch: Colors.blue,
-      // ),
-      home: Home(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       // title: '2048 Game',
+//       // theme: ThemeData(
+//       //   primarySwatch: Colors.blue,
+//       // ),
+//       home: Home(),
+//     );
+//   }
+// }
 
 // /// The route configuration.
 // final GoRouter _router = GoRouter(
