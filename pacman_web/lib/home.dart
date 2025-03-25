@@ -67,12 +67,18 @@ class HomeState extends State<Home> {
           color: Colors.black,
           height: 250,
           width: double.infinity,
-          child: Center(
+          child: const Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("CONTACT", style: GoogleFonts.notoSans(fontWeight: FontWeight.bold, fontSize: 60, color: Colors.white)),
-                Text("お問い合わせ", style: GoogleFonts.notoSans(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white)),
+                Text(
+                  "CONTACT",
+                  style: TextStyle(fontFamily: 'NotoSansJP', fontSize: 60, fontWeight: FontWeight.w500, color: Colors.white),
+                ),
+                Text(
+                  "お問い合わせ",
+                  style: TextStyle(fontFamily: 'NotoSansJP', fontSize: 24, fontWeight: FontWeight.w500, color: Colors.white),
+                ),
               ],
             ),
           ),
@@ -91,7 +97,18 @@ class HomeState extends State<Home> {
 
   Row textField(String label, TextEditingController controller) {
     return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      Text(label),
+      SizedBox(
+        width: 50,
+        child: Center(
+          child: Text(
+            label,
+            style: const TextStyle(
+              fontFamily: 'NotoSansJP',
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
+      ),
       const SizedBox(
         width: 20,
       ),
@@ -119,10 +136,11 @@ class HomeState extends State<Home> {
 
   button(name, onPress) {
     return TextButton(
-        onPressed: onPress,
-        child: Text(
-          name,
-          style: GoogleFonts.notoSans(fontWeight: FontWeight.bold, fontSize: 24, color: Colors.black),
-        ));
+      onPressed: onPress,
+      child: Text(
+        name,
+        style: const TextStyle(fontFamily: 'NotoSansJP', fontSize: 24, fontWeight: FontWeight.w500, color: Colors.black),
+      ),
+    );
   }
 }
